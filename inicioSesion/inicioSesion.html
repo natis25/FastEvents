@@ -1,0 +1,43 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bodyIS">
+    <div class="container">
+        <h2>Inicio de Sesión
+            <br>
+            <img src="../images/dinero.png" class="dineroImg" alt="Icono de dinero">
+        </h2>
+        <form action="../inicioSesion/api/login.php" method="POST">
+            <p>Ingrese su Correo:<br><br>
+                <input class="formulario" type="email" name="email" placeholder="Correo" required>
+            </p>
+
+            <p>Ingrese su Contraseña:<br><br>
+                <input class="formulario" type="password" name="password" placeholder="Contraseña" required>
+            </p>
+
+            <p>Seleccione si es organizador o cliente:<br>
+                <br>
+                <select class="cbInicio" name="tipo_usuario" title="Seleccione su tipo de usuario" required>
+                    <option value="organizador">Organizador</option>
+                    <option value="cliente">Cliente</option>
+                </select>
+            </p>
+            <button class="btn-IS" type="submit">Iniciar Sesion</button>
+        </form>
+        <p>¿No tienes una cuenta? Regístrate Gratis</p>
+        <a href="nuevoUsuario.php">
+            <button class="btn-R" type="submit">Registrarse</button>
+        </a>
+    </div>
+</body>

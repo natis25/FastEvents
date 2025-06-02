@@ -1,0 +1,200 @@
+body {
+    background: url('images/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0ff;
+}
+
+.navbar {
+    background-color: #430e93;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    /* Asegura que ocupe todo el ancho */
+    position: fixed;
+    /* Opcional: para navbar fijo */
+    top: 0;
+    /* Opcional: para navbar fijo */
+    left: 0;
+    /* Opcional: para navbar fijo */
+    margin: 0;
+    /* Elimina cualquier margen */
+    padding: 0;
+    /* Elimina cualquier padding */
+    border-radius: 0;
+    /* Elimina bordes redondeados si los tiene */
+    z-index: 1000;
+    /* Opcional: asegura que esté sobre otros elementos */
+}
+
+.container {
+    background: rgba(25, 20, 50, 0.6);
+    /* tono oscuro con transparencia */
+    border-radius: 25px;
+    width: 95vw;
+    /* casi todo el ancho de la pantalla */
+    max-width: 1200px;
+    /* evita que se haga muy grande en pantallas grandes */
+    height: auto;
+    max-height: 90vh;
+    /* evita que sobrepase la altura visible */
+    box-shadow: 0 0 20px rgba(100, 100, 255, 0.3);
+    padding: 2rem;
+    margin: 2rem auto;
+    /* centrado vertical y horizontal */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+    /* scroll interno si se desborda en altura */
+}
+
+
+h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 60px;
+    color: #e5e0ff;
+    font-weight: 800;
+    text-decoration: underline;
+    text-shadow: 2px 2px 10px #000;
+}
+
+h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 40px;
+    color: #d0ccff;
+    text-shadow: 1px 1px 5px #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #e5e5ff;
+    background-color: rgba(20, 20, 40, 0.6);
+}
+
+th,
+td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: rgba(60, 60, 90, 0.8);
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(40, 40, 70, 0.3);
+}
+
+.btn-IS {
+    background-color: #563f91;
+    color: white;
+    border-radius: 7px;
+    height: 6%;
+    width: 45%;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(130, 100, 255, 0.4);
+}
+
+.btn-IS:hover {
+    background-color: white;
+    color: #563f91;
+    border: 1px solid #563f91;
+}
+
+.btn-eliminar:hover {
+    text-decoration: underline;
+    color: #ff5e5e;
+}
+
+p,
+label {
+    color: #e0e0ff;
+    font-size: 20px;
+}
+
+.formulario, select{
+    width: 90%;
+    max-width: 400px;
+    min-width: 180px;
+    border-radius: 7px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.btn-R {
+    background-color: white;
+    color: #563f91;
+    border: 1px solid #563f91;
+    border-radius: 7px;
+    height: 5%;
+    width: 35%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.btn-R:hover {
+    box-shadow: 0 0 10px rgba(130, 100, 255, 0.4);
+    background-color: #563f91;
+    color: white;
+}
+
+.cbInicio {
+    width: 30%;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid white;
+}
+
+.dineroImg {
+    height: 15%;
+    width: auto;
+}
+
+.styled-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: center;
+    color: #f0f0ff;
+    background-color: rgba(30, 30, 60, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.styled-table th {
+    background-color: rgba(70, 60, 110, 0.9);
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: rgba(50, 50, 80, 0.4);
+}
