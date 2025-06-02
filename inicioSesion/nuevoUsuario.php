@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Recoger y sanitizar los datos del formulario
-    $nombre = $conexion->real_escape_string($_POST['nombre_cliente']);
+    $nombre = $conexion->real_escape_string($_POST['nombre']);
     $correo = $conexion->real_escape_string($_POST['correo']);
     $celular = $conexion->real_escape_string($_POST['celular']);
     $direccion = $conexion->real_escape_string($_POST['direccion']);
