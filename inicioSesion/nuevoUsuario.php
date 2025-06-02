@@ -17,7 +17,7 @@
         <h2>Registro de Usuarios</h2>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <p>Nombre:<br>
-                <input class="formulario" type="text" name="nombre"required>
+                <input class="formulario" type="text" name="nombre" required>
             </p>
 
             <p>Correo Electrónico:<br>
@@ -36,6 +36,10 @@
                 <input class="formulario" type="password" name="contrasena" required>
             </p>
 
+            <p>Confirme la contraseña:<br>
+                <input class="formulario" type="password" name="confirmar_contrasena" required>
+            </p>
+
             <input class="btn-IS" type="submit" value="Registrarse">
         </form>
     </div>
@@ -44,42 +48,40 @@
 </html>
 
 <?php
-// Procesar el formulario cuando se envía
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conectar a la base de datos (ajusta los parámetros según tu configuración)
-    $conexion = new mysqli("localhost", "root", "", "usuario");
-
-    // Verificar conexión
-    if ($conexion->connect_error) {
-        die("Error de conexión: " . $conexion->connect_error);
+    // Verificar si las contraseñas coinciden
+    if ($_POST['contrasena'] !== $_POST['confirmar_contrasena']) {
+        echo "<script>alert('Error: Las contraseñas no coinciden.');</script>";
+        exit;
     }
 
-    // Recoger y sanitizar los datos del formulario
+    // Conexión a la base de datos
+    $conexion = new mysqli("localhost", "root", "", "usuario");
+
+    if ($conexion->connect_error) {
+        echo "<script>alert('Error de conexión: " . $conexion->connect_error . "');</script>";
+        exit;
+    }
+
+    // Escapar los datos que sí se guardarán
     $nombre = $conexion->real_escape_string($_POST['nombre']);
     $correo = $conexion->real_escape_string($_POST['correo']);
     $celular = $conexion->real_escape_string($_POST['celular']);
     $direccion = $conexion->real_escape_string($_POST['direccion']);
     $contrasena = $conexion->real_escape_string($_POST['contrasena']);
 
-    // Hash de la contraseña (recomendado para seguridad)
-    //$contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-
-    // Obtener fecha actual
     $fecha_registro = date('Y-m-d');
 
-    // Preparar la consulta SQL
+    // Consulta SQL para insertar el nuevo cliente
     $sql = "INSERT INTO cliente (nombre_cliente, correo, celular, direccion, contrasena, fecha_registro) 
             VALUES ('$nombre', '$correo', '$celular', '$direccion', '$contrasena', '$fecha_registro')";
 
-    // Ejecutar la consulta
     if ($conexion->query($sql) === TRUE) {
-        echo "Registro exitoso. ¡Bienvenido, $nombre!";
+        echo "<script>alert('Registro exitoso. ¡Bienvenido, $nombre!');</script>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conexion->error;
+        echo "<script>alert('Error: " . $conexion->error . "');</script>";
     }
 
-    // Cerrar conexión
     $conexion->close();
 }
 ?>
-
