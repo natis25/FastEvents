@@ -1,9 +1,10 @@
 <?php
 return [
     'host' => 'smtp.gmail.com',
-    'username' => 'alan.fernandez@ucb.edu.bo',
-    'password' => 'mjmx hvge ydst funj',
+    'username' => 'mauroguitarlml@gmail.com',
+    'password' => 'ehxmrjslxoujsdcy',
     'port' => 587,
-    'from' => 'alan.fernandez@ucb.edu.bo',
+    'encryption' => 'tls', 
+    'from' => 'mauroguitarlml@gmail.com',
     'from_name' => 'FastEvents'
 ];
