@@ -1,7 +1,14 @@
 
 <?php require_once '../../config/db.php'; ?>
-
-<h2>Listado de Eventos</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Evento</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+<h1>Listado de Eventos</h1>
 <a href="crear.php" class="btn">Nuevo Evento</a>
 
 <table>
@@ -42,6 +49,7 @@
         ?>
     </tbody>
 </table>
+</body>
 
 <script>
 function confirmarEliminar(id) {

@@ -25,8 +25,15 @@ try {
     exit;
 }
 ?>
-
-<h2>Cancelar Evento</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Evento</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+<h1>Cancelar Evento</h1>
 
 <div class="evento-info">
     <h3><?= htmlspecialchars($evento['nombre']) ?></h3>

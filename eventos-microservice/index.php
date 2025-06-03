@@ -1,7 +1,6 @@
 <?php
 require_once 'config/db.php';
 
-// Obtener algunos eventos destacados para mostrar en la página principal
 try {
     $stmt = $conn->query("SELECT * FROM eventos WHERE activo = 1 ORDER BY fecha ASC LIMIT 3");
     $eventos_destacados = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -10,6 +9,14 @@ try {
     $error = "Error al cargar eventos destacados: " . $e->getMessage();
 }
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Evento</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
 
 <div class="hero">
     <h1>Bienvenido al Gestor de Eventos</h1>
@@ -49,3 +56,4 @@ try {
         <a href="views/eventos/listar.php" class="btn btn-large">Gestionar Eventos</a>
     </div>
 </section>
+</body>

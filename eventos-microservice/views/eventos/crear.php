@@ -1,6 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Evento</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
 
-
-<h2>Crear Nuevo Evento</h2>
+<h1>Crear Nuevo Evento</h1>
 
 <form action="../../api/eventos_create.php" method="post">
     <div class="form-group">
@@ -50,3 +57,4 @@
     
     <button type="submit" class="btn">Crear Evento</button>
 </form>
+</body>
